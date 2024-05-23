@@ -4,16 +4,13 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
 
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="theme-color" content="#ffffff" />
     <meta name="msapplication-TileColor" content="#da532c" />
-    <meta
-      name="msapplication-config"
-      content="/src/img/icons/browserconfig.xml"
-    />
+    <meta name="msapplication-config" content="/src/img/icons/browserconfig.xml" />
     <link rel="manifest" href="/manifest.json" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
       .light {
         color-scheme: light;
@@ -23,7 +20,8 @@
       }
     </style>
     <title>ui79</title>
-    <script type="module" crossorigin src="/assets/index-FoYBXYhr.js"></script>
+    <script type="module" crossorigin src="/assets/index-CKPYljj9.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-ECSWS5-B.css">
   </head>
   <body>
     <div id="root"></div>
@@ -44,10 +42,7 @@
             if (installingWorker) {
               console.log('installing sw found');
               installingWorker.onstatechange = async () => {
-                if (
-                  installingWorker.state === 'installed' &&
-                  navigator.serviceWorker.controller
-                ) {
+                if (installingWorker.state === 'installed' && navigator.serviceWorker.controller) {
                   console.log('new sw installed');
                   window.swNeedUpdate = true;
 
@@ -63,11 +58,8 @@
 
         const SWHelper = {
           async getWaitingWorker() {
-            const registrations =
-              (await navigator?.serviceWorker?.getRegistrations()) || [];
-            const registrationWithWaiting = registrations.find(
-              (reg) => reg.waiting,
-            );
+            const registrations = (await navigator?.serviceWorker?.getRegistrations()) || [];
+            const registrationWithWaiting = registrations.find((reg) => reg.waiting);
             return registrationWithWaiting?.waiting;
           },
 
